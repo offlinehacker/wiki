@@ -1,0 +1,37 @@
+created: 20150104181728305
+modified: 20150104212341233
+tags: [[reinforcement learning]]
+title: [Reinforcement learning] 3. Dynamic programming
+type: text/vnd.tiddlywiki
+
+The term dynamic programming (DP) refers to a collection of algorithms that can be used to compute optimal policies given a ''perfect model of the environment as a Markov decision process (MDP)''. Classical DP algorithms are of limited utility in reinforcement learning both because of their assumption of a perfect model and because of their great computational expense.
+
+The key idea of DP, and of reinforcement learning generally, is the use of value functions to organize and structure the search for good policies.
+
+! Policy evaluation:
+
+{{rl:Policy evaluation}}
+
+Example policy evaluation step if agent follows random policy: {{rl:Random policy}}
+
+! Policy imporovement:
+
+So far so good, but how could we improve policy, over random policy.
+
+Policy imporvement theorem states if {{rl:Policy improvement theorem}} holds, π' must be as good or better as π, then {{rl:Policy imporovement theorem 2}} is true.
+
+The proof is following: {{rl:Policy improvement theorem proof}}
+
+Policy improvement thus must give us a strictly better policy except when the original policy is already optimal.
+
+We define a new greedy policy selection: {{rl:Policy improvement theorem, greedy policy}}
+
+''This is basically an action that maximizes return, that's what we were looking for.''
+
+The policy improvement theorem carries through as stated for the stochastic case: {{rl:Policy improvement, stohastic}}
+
+! Policy iteration:
+
+Now we add policy improvement to the algorithm: {{rl:Policy iteration}}
+
+In every interation, first value is computed, then policy is improved.

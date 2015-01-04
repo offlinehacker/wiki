@@ -1,0 +1,25 @@
+created: 20150104123827404
+creator: offlinehacker
+modified: 20150104172720416
+modifier: offlinehacker
+tags: Journal
+title: 4th January 2015
+type: text/vnd.tiddlywiki
+
+''Today is a beautifull day to start something new:''
+
+* If chrome does not crash again!!!
+* If you find out about this nice tool called tiddlywiki
+
+** <div>
+
+Insert an image:
+
+[img[awesome-cat.jpg]]
+
+</div>
+
+** You should import files with tools you know! (or use ctrl+v) For every image it will create new document with image as base64 data. This is not really the most beautifull, but it should work for me.
+** Until now it proves to be very usefull, let's see how it scales when i write more articles
+** Do not tag your images, tags are for articles not for metadata.
+** It looks like if you import images with tools it does not create base64 encoded file. This is usefull if you want to browse images. If you just need to insert some images for notes, it does not really matter.

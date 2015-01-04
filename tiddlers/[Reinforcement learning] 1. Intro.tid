@@ -1,0 +1,25 @@
+created: 20150104155153905
+creator: offlinehacker
+modified: 20150104214711341
+modifier: offlinehacker
+tags: [[reinforcement learning]]
+title: [Reinforcement learning] 1. Intro
+type: text/vnd.tiddlywiki
+
+The plot is:
+
+* There are several states s
+* In every state we can do one of actions a from A, this changes our state.
+* For making action we get  some reward
+* Find a policy that maximizes reward(return)
+
+Basic equations:
+
+* Probabilty of being in state s' after taking action a in state s {{rl:Transition probability}}
+* Expected next reward {{rl:Expected reward}}
+* Policy {{rl:Learning policy}} (probability of taking action a in state s)
+* Value function {{rl:Value function}}
+* Action-value function {{rl:Action-value function}}
+* Bellman equation {{rl:Bellman equation}}
+* Bellman equation for action value [img width=500 [rl:Bellman action-value]]
+* Backup diagrams: {{rl:Backup diagram}}

@@ -1,0 +1,25 @@
+created: 20150104172826984
+modified: 20150104212059308
+tags: [[reinforcement learning]]
+title: [Reinforcement learning] 2. Optimality
+type: text/vnd.tiddlywiki
+
+Optimality equations:
+
+* Optimal function {{rl:Optimal state-value function}} {{Optimal action-value function}}
+* Bellman optimal equations: for value and action-value {{rl:Bellman optimality equation}} {{rl:Bellman action-value optimality equation}}
+
+For finite MDPs, the Bellman optimality equation has a unique solution independent of the policy. The Bellman optimality equation is actually a system of equations, one for each state, so if there are N  states, then there are M  equations in N unknowns.
+
+Once one has V*, it is relatively easy to determine an optimal policy. For each state , there will be one or more actions at which the maximum is obtained in the Bellman optimality equation. Any policy that assigns nonzero probability only to these actions is an optimal policy. You can think of this as a one-step search. If you have the optimal value function, V*, then the actions that appear best after a one-step search will be optimal actions.
+
+Having Q makes choosing optimal actions still easier. With , the agent does not even have to do a one-step-ahead search: for any state s, it can simply find any action that maximizes Q*(s,a).
+
+Example of solving bellman optimality equations for cleaning robot:
+
+* {{rl:Belman optimality equation example}}
+* {{rl:Belman optimality equation example 2}}
+
+Clearly, an agent that learns an optimal policy has done very well, but in practice this rarely happens. For the kinds of tasks in which we are interested, optimal policies can be generated only with extreme computational cost.
+
+Our framing of the reinforcement learning problem forces us to settle for approximations. However, it also presents us with some unique opportunities for achieving useful approximations. For example, in approximating optimal behavior, there may be many states that the agent faces with such a low probability that selecting suboptimal actions for them has little impact on the amount of reward the agent receives. 
