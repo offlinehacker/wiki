@@ -1,5 +1,5 @@
 created: 20150104181728305
-modified: 20150104212341233
+modified: 20150105004829642
 tags: [[reinforcement learning]]
 title: [Reinforcement learning] 3. Dynamic programming
 type: text/vnd.tiddlywiki
@@ -35,3 +35,28 @@ The policy improvement theorem carries through as stated for the stochastic case
 Now we add policy improvement to the algorithm: {{rl:Policy iteration}}
 
 In every interation, first value is computed, then policy is improved.
+
+! Value interation:
+
+Above algorithm has 2 problems:
+
+* each of iterations involves policy evaluation
+* We must wait for exact convergence to the limit, where the value does not change and this can take some time.
+
+The improved algorithm is called value iteration: {{rl:Value iteration}}
+
+This algorithm updates value and follows best policy. At the same time it truncates value iteration, when max change is under speciffic threshold.
+
+! Asynchronous Dynamic Programming
+
+A major drawback to the DP methods that we have discussed so far is that they involve operations over the entire state set of the MDP, that is, they require sweeps of the state set.
+
+Asynchronous algorithms also make it easier to intermix computation with real-time interaction. To solve a given MDP, we can run an iterative DP algorithm at the same time that an agent is actually experiencing the MDP. The agent's experience can be used to determine the states to which the DP algorithm applies its backups. At the same time, the latest value and policy information from the DP algorithm can guide the agent's decision-making. For example, we can apply backups to states as the agent visits them. This makes it possible to focus the DP algorithm's backups onto parts of the state set that are most relevant to the agent. This kind of focusing is a repeated theme in reinforcement learning.
+
+! Generalized Policy Iteration
+
+Policy iteration consists of two simultaneous, interacting processes, one making the value function consistent with the current policy (policy evaluation), and the other making the policy greedy with respect to the current value function (policy improvement).
+
+{{rl:GPI}}
+
+''It is easy to see that if both the evaluation process and the improvement process stabilize, that is, no longer produce changes, then the value function and policy must be optimal.'' The value function stabilizes only when it is consistent with the current policy, and the policy stabilizes only when it is greedy with respect to the current value function. Thus, both processes stabilize only when a policy has been found that is greedy with respect to its own evaluation function. 
